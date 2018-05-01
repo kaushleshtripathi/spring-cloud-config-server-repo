@@ -44,13 +44,13 @@ public class EmployeeRestController {
 	@Autowired 
 	Environment env;
 	
+	
 	EmployeeService employeeService;
 	
 	@Autowired	
 	public void setEmployeeService(EmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
-
 
 	@Value("${msg.resource.created.success}")
 	private String postCreatedSuccess;
@@ -59,6 +59,7 @@ public class EmployeeRestController {
 	public String getHello() {
 		return employeeService.sayHello();
 	}
+	
 	
 	@RequestMapping("/test/{name}")
 	public String getName(@PathVariable String name) {
